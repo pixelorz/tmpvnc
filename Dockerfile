@@ -19,6 +19,8 @@ EXPOSE 5901
 # Set XDRP to use TightVNC port
 RUN sed -i '0,/port=-1/{s/port=-1/port=5901/}' /etc/xrdp/xrdp.ini
 
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
 # Copy VNC script that handles restarts
 COPY vnc.sh /opt/
 RUN chmod +x /opt/vnc.sh
