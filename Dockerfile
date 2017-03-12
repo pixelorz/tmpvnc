@@ -2,10 +2,7 @@ FROM ubuntu:14.04
 
 # Install LXDE, VNC server, XRDP and Firefox
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-  lxde-core \
-  lxterminal \
-  tightvncserver \
-  xrdp
+  firefox lxde-core gnome-terminal lxterminal tightvncserver xrdp
 
 # Set user for VNC server (USER is only for build)
 ENV USER root
